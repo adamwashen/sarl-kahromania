@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Groupe Al-Ryada — Sarl Kahromania, éclairage décoratif et vente en gros.">
+  <title>Groupe Al-Ryada | Sarl Kahromania</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand admin-trigger" id="adminTrigger" title="Groupe Al-Ryada">
+      <span class="brand-mark">◆</span>
+      <div><strong id="brandName">Groupe Al-Ryada</strong><small id="branchName">Sarl Kahromania — Algérie</small></div>
+    </div>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#produits">Produits</a>
+      <a href="#gros">Vente en gros</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" id="cartBtn">Panier <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-content">
+        <span class="eyebrow">ÉCLAIRAGE • DÉCORATION • PROFESSIONNEL</span>
+        <h1 id="heroTitle">Donnez une nouvelle lumière à vos espaces.</h1>
+        <p id="heroText">Des solutions d'éclairage modernes pour maisons, commerces, bureaux et projets décoratifs.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#produits">Découvrir les produits</a>
+          <a class="btn secondary" href="#gros">Voir la vente en gros</a>
+        </div>
+      </div>
+      <div class="hero-glow"></div>
+    </section>
+
+    <section class="section" id="produits">
+      <div class="section-head">
+        <div><span class="eyebrow">COLLECTION</span><h2>Nos produits</h2></div>
+        <p>Ajoutez vos articles au panier puis envoyez la commande directement sur WhatsApp.</p>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="wholesale section" id="gros">
+      <div class="section-head">
+        <div><span class="eyebrow">PROFESSIONNELS</span><h2>Vente en gros</h2></div>
+        <p>Tarifs et références dédiés aux revendeurs, entreprises et grands projets.</p>
+      </div>
+      <div class="product-grid" id="wholesaleGrid"></div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div>
+        <span class="eyebrow">CONTACT</span>
+        <h2>Une question ? Parlons sur WhatsApp.</h2>
+        <p>Commandes, disponibilité, prix de gros ou demande de devis.</p>
+      </div>
+      <a class="btn primary" id="contactWhatsapp" target="_blank" rel="noopener">Contacter sur WhatsApp</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> Groupe Al-Ryada — Sarl Kahromania</span>
+    <span>Éclairage & décoration</span>
+  </footer>
+
+  <div class="modal hidden" id="cartModal">
+    <div class="modal-card">
+      <button class="close" data-close="cartModal">×</button>
+      <h2>Votre panier</h2>
+      <div id="cartItems"></div>
+      <div class="cart-total">Total : <strong id="cartTotal">0 DA</strong></div>
+      <button class="btn primary full" id="sendOrder">Commander via WhatsApp</button>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="loginModal">
+    <div class="modal-card small">
+      <button class="close" data-close="loginModal">×</button>
+      <h2>Admin Dashboard</h2>
+      <p>Entrez le mot de passe.</p>
+      <input id="adminPassword" type="password" inputmode="numeric" placeholder="Mot de passe">
+      <button class="btn primary full" id="loginBtn">Accéder</button>
+      <small id="loginError"></small>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="adminModal">
+    <div class="modal-card admin-card">
+      <button class="close" data-close="adminModal">×</button>
+      <div class="admin-head"><div><span class="eyebrow">ADMIN</span><h2>Tableau de bord</h2></div><button class="btn secondary" id="resetBtn">Réinitialiser</button></div>
+      <div class="admin-tabs">
+        <button class="tab active" data-tab="general">Général</button>
+        <button class="tab" data-tab="products">Produits</button>
+        <button class="tab" data-tab="wholesale">Gros</button>
+      </div>
+
+      <div class="tab-panel active" id="tab-general">
+        <label>Nom de l'entreprise<input id="editBrand"></label>
+        <label>Nom du succursale<input id="editBranch"></label>
+        <label>Titre principal<input id="editHeroTitle"></label>
+        <label>Description principale<textarea id="editHeroText"></textarea></label>
+        <label>WhatsApp<input id="editWhatsapp" placeholder="+213540588197"></label>
+        <button class="btn primary" id="saveGeneral">Enregistrer</button>
+      </div>
+
+      <div class="tab-panel" id="tab-products">
+        <div class="admin-list" id="adminProducts"></div>
+        <button class="btn secondary" id="addProduct">+ Ajouter un produit</button>
+        <button class="btn primary" id="saveProducts">Enregistrer les produits</button>
+      </div>
+
+      <div class="tab-panel" id="tab-wholesale">
+        <div class="admin-list" id="adminWholesale"></div>
+        <button class="btn secondary" id="addWholesale">+ Ajouter un article de gros</button>
+        <button class="btn primary" id="saveWholesale">Enregistrer la vente en gros</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
